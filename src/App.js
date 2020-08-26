@@ -48,6 +48,25 @@ export default function App() {
               <SafeAreaView style={styles.repositoryContainer}>
                 <Text styles={styles.likeText} key={repository.id}>{repository.title}</Text>
                 <SafeAreaView style={styles.techsContainer}>
+                  {repository.techs.map(tech => (
+                    <Text key={tech} style={styles.tech}>
+                      {tech}
+                    </Text>
+                  ))}
+
+                  {/* It is necessary when you make shit! Doesn't use method "post" like this:
+                            {
+                              "title": "Front-End",
+                              "url": "http://www.google.com.br",
+                              "techs": "ReactJS"
+                            }
+                      This is the right("techs" need to be in array):
+                            {
+                              "title": "Front-End",
+                              "url": "http://www.google.com.br",
+                              "techs": ["ReactJS"]
+                            }
+                  ------------------------------------------------------------------
                   {(typeof(repository.techs)) === 'string' 
                   ?                   
                   <Text style={styles.tech}>
@@ -57,7 +76,7 @@ export default function App() {
                   repository.techs.map(techs => 
                   <Text style={styles.tech}>
                     {techs}
-                  </Text>)}
+                  </Text>)} */}
                 </SafeAreaView>
 
                 <SafeAreaView style={styles.likesContainer}>
